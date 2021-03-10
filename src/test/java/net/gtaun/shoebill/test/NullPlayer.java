@@ -1050,4 +1050,15 @@ public class NullPlayer extends Player {
     public void sendMessage(String s) {
 
     }
+
+    @NotNull
+    @Override
+    public Vector3D getPosition() {
+        return null;
+    }
+
+    @Override
+    public void setPosition(@NotNull Vector3D vector3D) {
+
+    }
 }

@@ -39,6 +39,11 @@ class ListDialog constructor(eventManager: EventManager) : AbstractDialog(Dialog
             dialog.addItem(init(this as B))
             return this
         }
+        fun item(item: String, supplier: Boolean) = item { ListDialogItem(item, ItemBooleanSupplier { supplier }) }
+
+        fun item(item: String, handler: (ListDialogItem, Player) -> Unit) = item { ListDialogItem(item, handler = ItemSelectHandler(handler)) }
+
+        fun item(item: String, supplier: Boolean, handler: (ListDialogItem, Player) -> Unit) = item { ListDialogItem(item, ItemBooleanSupplier { supplier }, ItemSelectHandler(handler)) }
 
         fun item(item: String) = item { ListDialogItem(item) }
     }

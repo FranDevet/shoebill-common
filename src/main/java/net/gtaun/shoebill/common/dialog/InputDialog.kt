@@ -82,7 +82,6 @@ class InputDialog
     }
 
     override fun show(player: Player) {
-        super.show(player)
         show(player, messageSupplier[this])
     }
 
